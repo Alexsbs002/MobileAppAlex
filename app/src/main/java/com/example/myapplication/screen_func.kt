@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun Screen() {
     val myColor: Color = Color(0xFF050B18)
-
+//remove Lazy Column
     Column(
         modifier = Modifier
             .background(myColor)
