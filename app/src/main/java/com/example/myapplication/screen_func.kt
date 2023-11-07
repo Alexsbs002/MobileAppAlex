@@ -21,29 +21,17 @@ fun Screen() {
 
     Column(
         modifier = Modifier
-            .background(myColor).fillMaxWidth().fillMaxHeight()
+            .background(myColor)
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
     ) {
-//        no lazy column
+        DotaHeader()
 
+        dotaInfo()
 
-        LazyColumn(
+        dotaDemo()
 
-            modifier = Modifier
-                .fillMaxSize(),
-        ) {
-            item {
-                DotaHeader()
-            }
-            item {
-                dotaInfo()
-            }
-            item {
-                dotaDemo()
-            }
-            item {
-                dotaButton()
-            }
-
-        }
+        dotaButton()
     }
+
 }
