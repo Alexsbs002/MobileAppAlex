@@ -27,6 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 
+//all function of project
 @Composable
 fun dotaInfo() {
     Column (modifier = Modifier.padding(

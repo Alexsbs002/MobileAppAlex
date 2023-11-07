@@ -71,6 +71,7 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
+//            main function
             Screen()
         }
     }
