@@ -310,12 +310,90 @@ fun dotaDemo() {
 fun dotaComments(){
     Column(modifier = Modifier.padding(24.dp)) {
         Text(color = Color.White, text = stringResource(R.string.review), fontWeight = FontWeight.Bold, fontSize=25.sp, )
+        Row() {
+//            RATING
+            Box(){
+                Text(color = Color.White, text = stringResource(R.string.game_rating), fontWeight = FontWeight.Bold, fontSize=49.sp, )
+            }
+//            REVIEWS + STARS
+            Box(){
+                Box(modifier = Modifier.zIndex(2f)
+                    .offset(25.dp,35.dp)){
+                    Text(color = Color.DarkGray, text = stringResource(R.string.game_downloads)+" Reviews", fontWeight = FontWeight.Bold, fontSize=14.sp, )
+                }
+//                STARS
+                Box(){
+                    LazyRow(
+                        modifier = Modifier.zIndex(2f)
+                            .offset(25.dp,15.dp),
+                        horizontalArrangement = Arrangement.spacedBy(4.dp),
+
+                        ) {
+                        item {
+                            Image(
+                                painter = painterResource(id = R.drawable.yellowratingstar),
+                                contentDescription = "dotaScreenshot",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
 
 
 
+                            )
+                        }
+                        item {
+                            Image(
+                                painter = painterResource(id = R.drawable.yellowratingstar),
+                                contentDescription = "dotaScreenshot",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
 
+
+
+                            )
+                        }
+                        item {
+                            Image(
+                                painter = painterResource(id = R.drawable.yellowratingstar),
+                                contentDescription = "dotaScreenshot",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                            )
+                        }
+                        item {
+                            Image(
+                                painter = painterResource(id = R.drawable.yellowratingstar),
+                                contentDescription = "dotaScreenshot",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                            )
+                        }
+                        item {
+                            Image(
+                                painter = painterResource(id = R.drawable.yellowratingstar),
+                                contentDescription = "dotaScreenshot",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                            )
+                        }
+                    }
+
+                }
+            }
+
+        }
     }
+
 }
+
 @Preview(showBackground = true)
 @Composable
 fun dotaButton() {
