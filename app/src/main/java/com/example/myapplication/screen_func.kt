@@ -31,6 +31,8 @@ fun Screen() {
 
         dotaDemo()
 
+        dotaComments()
+
         dotaButton()
     }
 

@@ -24,23 +24,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 
 //all function of project
-@Composable
-fun dotaInfo() {
-    Column (modifier = Modifier.padding(
-        start = 24.dp,
-        end = 24.dp,
-        top = 14.dp,
-        bottom = 14.dp,)){
-        Text( color = Color.White,text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own." )
-    }
 
-}
 
 @Composable
+@Preview(showBackground = true)
 fun DotaHeader() {
     Box(
     ) {
@@ -48,7 +43,7 @@ fun DotaHeader() {
         dotaIcon()
     }
 }
-
+@Preview(showBackground = true)
 @Composable
 fun jaggerHeader(){
     Image(
@@ -60,6 +55,7 @@ fun jaggerHeader(){
     )
 
 }
+@Preview(showBackground = true)
 @Composable
 fun dotaIcon(){
     Box(modifier = Modifier.padding(start = 40.dp, top = 250.dp)) {
@@ -83,8 +79,20 @@ fun dotaIcon(){
     }
 
 }
+@Preview(showBackground = true)
+@Composable
+fun dotaInfo() {
+    Column (modifier = Modifier.padding(
+        start = 24.dp,
+        end = 24.dp,
+        top = 14.dp,
+        bottom = 14.dp,)){
+        Text(color = Color.White, text = stringResource(R.string.About_dota))
+    }
 
+}
 
+@Preview(showBackground = true)
 @Composable
 fun dotaDemo() {
     LazyRow(
@@ -130,7 +138,19 @@ fun dotaDemo() {
 
 
 }
+@Preview(showBackground = true)
+@Composable
+fun dotaComments(){
+    Column(modifier = Modifier.padding(24.dp)) {
+        Text(color = Color.White, text = stringResource(R.string.review), fontWeight = FontWeight.Bold, fontSize=25.sp, )
 
+
+
+
+    }
+
+}
+@Preview(showBackground = true)
 @Composable
 fun dotaButton() {
     Row(
