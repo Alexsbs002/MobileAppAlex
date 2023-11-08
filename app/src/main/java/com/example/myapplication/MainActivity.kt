@@ -61,6 +61,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.core.view.WindowCompat
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.example.myapplication.ui.theme.Pink40
+import com.example.myapplication.ui.theme.backgroundColor
 import org.w3c.dom.Comment
 
 
@@ -72,7 +74,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
 //            main screen function
-            Screen()
+//            myColor is background color (backgroundColor = Color(0xFF050B18))
+            val myColor: Color = backgroundColor
+            Screen(myColor)
         }
     }
 }

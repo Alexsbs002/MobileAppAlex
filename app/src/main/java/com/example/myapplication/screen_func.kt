@@ -11,21 +11,26 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myapplication.ui.theme.backgroundColor
 
 //screen - main func to call all functions
-@Preview(showBackground = true)
+
 @Composable
-fun Screen() {
-    val myColor: Color = Color(0xFF050B18)
+fun Screen(color: Color) {
+//    цвет фона приложения в переменной myColor
+
 
     Column(
         modifier = Modifier
-            .background(myColor)
+            .background(color)
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
     ) {
         DotaHeader()
+
+        gameGenres()
 
         dotaInfo()
 

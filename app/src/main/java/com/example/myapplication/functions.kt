@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
@@ -19,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -30,6 +33,9 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import com.example.myapplication.ui.theme.genresColoLight
+import com.example.myapplication.ui.theme.genresColor
+import com.example.myapplication.ui.theme.genresColorDarker
 
 //all function of project
 
@@ -55,39 +61,200 @@ fun jaggerHeader(){
     )
 
 }
+
 @Preview(showBackground = true)
 @Composable
 fun dotaIcon(){
-    Box(modifier = Modifier.padding(start = 40.dp, top = 250.dp)) {
+    Box(modifier = Modifier.offset(24.dp,270.dp)) {
         Box(
             modifier = Modifier.zIndex(2f)
 //                    .offset()
                 .border(
                     BorderStroke(2.dp, Color.DarkGray), RoundedCornerShape(10.dp)
                 )
-                .height(80.dp).width(80.dp)
+                .height(100.dp).width(100.dp)
 
         ) {
             Image(
                 painter = painterResource(id = R.drawable.dota_icon),
                 contentDescription = "dotaIcon",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.background(Color.Black).height(80.dp).width(80.dp)
-                    .padding(15.dp)
+                modifier = Modifier.background(Color.Black).height(100.dp).width(100.dp)
+                    .padding(20.dp)
             )
+        }
+
+        Box(
+            modifier = Modifier.zIndex(2f)
+                    .offset(120.dp,40.dp)
+
+        ) {
+            Text(color = Color.White, text = stringResource(R.string.game_name), fontWeight = FontWeight.SemiBold, fontSize=24.sp,)
+        }
+//STARS
+        LazyRow(
+            modifier = Modifier.zIndex(2f)
+                .offset(120.dp,80.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+
+            ) {
+            item {
+                Image(
+                    painter = painterResource(id = R.drawable.yellowratingstar),
+                    contentDescription = "dotaScreenshot",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                )
+            }
+            item {
+                Image(
+                    painter = painterResource(id = R.drawable.yellowratingstar),
+                    contentDescription = "dotaScreenshot",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                )
+            }
+            item {
+                Image(
+                    painter = painterResource(id = R.drawable.yellowratingstar),
+                    contentDescription = "dotaScreenshot",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                )
+            }
+            item {
+                Image(
+                    painter = painterResource(id = R.drawable.yellowratingstar),
+                    contentDescription = "dotaScreenshot",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                )
+            }
+            item {
+                Image(
+                    painter = painterResource(id = R.drawable.yellowratingstar),
+                    contentDescription = "dotaScreenshot",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
+
+
+
+                )
+            }
+        }
+//        ЧИСЛО ЗАГРУЗОК game_downloads
+        Row(modifier = Modifier.zIndex(2f)
+            .offset(220.dp,80.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),){
+            Text(color = Color.DarkGray, text = stringResource(R.string.game_downloads), fontWeight = FontWeight.SemiBold, fontSize=14.sp,)
+        }
+
+
+
+    }
+
+
+}
+@Preview(showBackground = true)
+@Composable
+fun gameGenres(){
+//ЖАНРЫ
+    LazyRow(
+        modifier = Modifier.padding(top = 100.dp, start = 24.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+
+
+
+    ) {
+        item {
+            Row(
+                modifier = Modifier.alpha(0.8f)
+                    .height(25.dp)
+                    .clip(shape = RoundedCornerShape(size = 20.dp))
+                    .background(
+                        color = genresColorDarker
+                    ),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically,
+
+
+
+                ) {
+
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(color = genresColoLight, text = stringResource(R.string.game_genre1))
+                    Spacer(modifier = Modifier.width(10.dp))
+            }
+
+        }
+      item {
+          Row(
+          modifier = Modifier.alpha(0.8f)
+              .height(25.dp)
+              .clip(shape = RoundedCornerShape(size = 20.dp))
+              .background(
+                  color = genresColorDarker
+              ),
+          horizontalArrangement = Arrangement.Center,
+          verticalAlignment = Alignment.CenterVertically,
+
+
+
+          ) {
+
+          Spacer(modifier = Modifier.width(10.dp))
+          Text(color = genresColoLight, text = stringResource(R.string.game_genre2))
+          Spacer(modifier = Modifier.width(10.dp))
+      }
+
+        }
+        item {
+            Row(
+                modifier = Modifier.alpha(0.8f)
+                    .height(25.dp)
+                    .clip(shape = RoundedCornerShape(size = 20.dp))
+                    .background(
+                        color = genresColorDarker
+                    ),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically,
+
+
+
+                ) {
+
+                Spacer(modifier = Modifier.width(10.dp))
+                Text(color = genresColoLight, text = stringResource(R.string.game_genre3))
+                Spacer(modifier = Modifier.width(10.dp))
+            }
+
         }
     }
 
 }
+
 @Preview(showBackground = true)
 @Composable
 fun dotaInfo() {
     Column (modifier = Modifier.padding(
         start = 24.dp,
+        top = 20.dp,
         end = 24.dp,
-        top = 14.dp,
-        bottom = 14.dp,)){
-        Text(color = Color.White, text = stringResource(R.string.About_dota))
+        bottom = 20.dp,
+        )){
+        Text(color = Color.White, text = stringResource(R.string.About_dota), )
     }
 
 }
@@ -148,7 +315,6 @@ fun dotaComments(){
 
 
     }
-
 }
 @Preview(showBackground = true)
 @Composable
