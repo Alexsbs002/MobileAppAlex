@@ -44,36 +44,43 @@ fun dotaInfo() {
 fun DotaHeader() {
     Box(
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.jagger),
-            contentDescription = "Runduck",
-            modifier = Modifier.height(300.dp).fillMaxWidth(),
-            contentScale = ContentScale.Crop
-
-        )
-
-        Box(modifier = Modifier.padding(start = 40.dp, top = 250.dp)) {
-            Box(
-                modifier = Modifier.zIndex(2f)
-//                    .offset()
-                    .border(
-                        BorderStroke(2.dp, Color.DarkGray), RoundedCornerShape(10.dp)
-                    )
-                    .height(80.dp).width(80.dp)
-
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.dota_icon),
-                    contentDescription = "Runduck",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier.background(Color.Black).height(80.dp).width(80.dp)
-                        .padding(15.dp)
-                )
-            }
-        }
-
+        jaggerHeader()
+        dotaIcon()
     }
+}
 
+@Composable
+fun jaggerHeader(){
+    Image(
+        painter = painterResource(id = R.drawable.jagger),
+        contentDescription = "runduck",
+        modifier = Modifier.height(300.dp).fillMaxWidth(),
+        contentScale = ContentScale.Crop
+
+    )
+
+}
+@Composable
+fun dotaIcon(){
+    Box(modifier = Modifier.padding(start = 40.dp, top = 250.dp)) {
+        Box(
+            modifier = Modifier.zIndex(2f)
+//                    .offset()
+                .border(
+                    BorderStroke(2.dp, Color.DarkGray), RoundedCornerShape(10.dp)
+                )
+                .height(80.dp).width(80.dp)
+
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.dota_icon),
+                contentDescription = "dotaIcon",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.background(Color.Black).height(80.dp).width(80.dp)
+                    .padding(15.dp)
+            )
+        }
+    }
 
 }
 
@@ -89,9 +96,9 @@ fun dotaDemo() {
         item {
             Image(
                 painter = painterResource(id = R.drawable.dotademo),
-                contentDescription = "Runduck",
+                contentDescription = "dotaScreenshot",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.background(Color.Transparent).height(120.dp)
+                modifier = Modifier.background(Color.Transparent).height(120.dp).width(260.dp)
                     .padding(start = 24.dp, end = 24.dp)
                     .clip(shape = RoundedCornerShape(size = 20.dp))
 
@@ -99,10 +106,21 @@ fun dotaDemo() {
         }
         item {
             Image(
-                painter = painterResource(id = R.drawable.dotademo),
-                contentDescription = "Runduck",
+                painter = painterResource(id = R.drawable.screendazzle),
+                contentDescription = "dotaScreenshot",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.background(Color.Transparent).height(120.dp)
+                modifier = Modifier.background(Color.Transparent).height(120.dp).width(260.dp)
+                    .padding(start = 24.dp, end = 24.dp)
+                    .clip(shape = RoundedCornerShape(size = 20.dp))
+
+            )
+        }
+        item {
+            Image(
+                painter = painterResource(id = R.drawable.screendota32),
+                contentDescription = "dotaScreenshot",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.background(Color.Transparent).height(120.dp).width(260.dp)
                     .padding(start = 24.dp, end = 24.dp)
                     .clip(shape = RoundedCornerShape(size = 20.dp))
 
