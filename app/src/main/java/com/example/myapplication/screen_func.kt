@@ -25,7 +25,7 @@ fun Screen(color: Color) {
     Column(
         modifier = Modifier
             .background(color)
-            .padding(bottom = 70.dp)
+            .padding(bottom = 100.dp)
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
     ) {
@@ -69,7 +69,7 @@ fun Screen(color: Color) {
         )
 
     }
-    Box(modifier = Modifier.fillMaxHeight(), contentAlignment = Alignment.BottomCenter) {
+    Box(modifier = Modifier.fillMaxHeight().padding(bottom = 50.dp), contentAlignment = Alignment.BottomCenter) {
         gameButton(onClick = {})
     }
 
