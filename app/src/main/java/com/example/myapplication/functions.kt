@@ -335,5 +335,4 @@ fun gameButton(onClick: () -> Unit) {
             Text("Install")
         }
     }
-
 }
