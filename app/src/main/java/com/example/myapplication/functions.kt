@@ -61,7 +61,7 @@ fun gameHeader() {
 
 @Preview(showBackground = true)
 @Composable
-fun jaggerHeader(){
+fun jaggerHeader() {
     Image(
         painter = painterResource(id = R.drawable.jagger),
         contentDescription = "runduck",
@@ -74,11 +74,11 @@ fun jaggerHeader(){
 
 @Preview(showBackground = true)
 @Composable
-fun gameIcon(){
-    Box(modifier = Modifier.offset(24.dp,270.dp)) {
+fun gameIcon() {
+    Box(modifier = Modifier.offset(24.dp, 270.dp)) {
+//        DOTA ICON
         Box(
             modifier = Modifier.zIndex(2f)
-//                    .offset()
                 .border(
                     BorderStroke(2.dp, Color.DarkGray), RoundedCornerShape(10.dp)
                 )
@@ -96,15 +96,20 @@ fun gameIcon(){
 
         Box(
             modifier = Modifier.zIndex(2f)
-                .offset(120.dp,40.dp)
+                .offset(120.dp, 40.dp)
 
         ) {
-            Text(color = Color.White, text = stringResource(R.string.game_name), fontWeight = FontWeight.SemiBold, fontSize=24.sp,)
+            Text(
+                color = Color.White,
+                text = stringResource(R.string.game_name),
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 24.sp,
+            )
         }
 //STARS
         LazyRow(
             modifier = Modifier.zIndex(2f)
-                .offset(120.dp,80.dp),
+                .offset(120.dp, 80.dp),
             horizontalArrangement = Arrangement.spacedBy(4.dp),
 
             ) {
@@ -125,12 +130,13 @@ fun gameIcon(){
             }
         }
 //        ЧИСЛО ЗАГРУЗОК game_downloads
-        Row(modifier = Modifier.zIndex(2f)
-            .offset(220.dp,80.dp),
-            horizontalArrangement = Arrangement.spacedBy(4.dp),){
+        Row(
+            modifier = Modifier.zIndex(2f)
+                .offset(220.dp, 80.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
             gameDownloads(R.string.game_downloads)
         }
-
 
 
     }
@@ -141,19 +147,18 @@ fun gameIcon(){
 
 @Preview(showBackground = true)
 @Composable
-fun gameGenres(){
+fun gameGenres() {
 //ЖАНРЫ
     LazyRow(
         modifier = Modifier.padding(top = 100.dp, start = 24.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
 
 
-
-    ) {
+        ) {
         item {
             oneGenre(R.string.game_genre1)
         }
-      item {
+        item {
             oneGenre(R.string.game_genre2)
 
         }
@@ -168,13 +173,15 @@ fun gameGenres(){
 @Preview(showBackground = true)
 @Composable
 fun gameInfo() {
-    Column (modifier = Modifier.padding(
-        start = 24.dp,
-        top = 20.dp,
-        end = 24.dp,
-        bottom = 20.dp,
-        )){
-        Text(color = textcolormain, text = stringResource(R.string.About_dota), )
+    Column(
+        modifier = Modifier.padding(
+            start = 24.dp,
+            top = 20.dp,
+            end = 24.dp,
+            bottom = 20.dp,
+        )
+    ) {
+        Text(color = textcolormain, text = stringResource(R.string.About_dota))
     }
 
 }
@@ -205,25 +212,43 @@ fun gameDemo() {
 
 @Preview(showBackground = true)
 @Composable
-fun gameComments(){
+fun gameComments() {
     Column(modifier = Modifier.padding(24.dp)) {
-        Text(color = Color.White, text = stringResource(R.string.review), fontWeight = FontWeight.Bold, fontSize=25.sp, )
+//        Review & Ratings
+        Text(
+            color = Color.White,
+            text = stringResource(R.string.review),
+            fontWeight = FontWeight.Bold,
+            fontSize = 25.sp,
+        )
         Row() {
 //            RATING
-            Box(){
-                Text(color = Color.White, text = stringResource(R.string.game_rating), fontWeight = FontWeight.Bold, fontSize=49.sp, )
+            Box() {
+                Text(
+                    color = Color.White,
+                    text = stringResource(R.string.game_rating),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 49.sp,
+                )
             }
 //            REVIEWS + STARS
-            Box(){
-                Box(modifier = Modifier.zIndex(2f)
-                    .offset(25.dp,35.dp)){
-                    Text(color = textcolormain, text = stringResource(R.string.game_downloads)+" Reviews", fontWeight = FontWeight.Bold, fontSize=14.sp, )
+            Box() {
+                Box(
+                    modifier = Modifier.zIndex(2f)
+                        .offset(25.dp, 35.dp)
+                ) {
+                    Text(
+                        color = textcolormain,
+                        text = stringResource(R.string.game_downloads) + " Reviews",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp,
+                    )
                 }
 //                STARS
-                Box(){
+                Box() {
                     LazyRow(
                         modifier = Modifier.zIndex(2f)
-                            .offset(25.dp,15.dp),
+                            .offset(25.dp, 15.dp),
                         horizontalArrangement = Arrangement.spacedBy(4.dp),
 
                         ) {
@@ -251,9 +276,9 @@ fun gameComments(){
     }
 
 }
-
+//Comments
 @Composable
-fun gameReviews(name: String, vrema: String, com: String, fotka: Int){
+fun gameReviews(name: String, vrema: String, com: String, fotka: Int) {
     Card(
         modifier = Modifier
             .background(Color.Transparent)
@@ -265,7 +290,7 @@ fun gameReviews(name: String, vrema: String, com: String, fotka: Int){
         Box(
             modifier = Modifier.background(backgroundColor)
         ) {
-            Column(modifier = Modifier.padding(start = 24.dp,end = 24.dp)) {
+            Column(modifier = Modifier.padding(start = 24.dp, end = 24.dp)) {
                 Row {
                     Image(
                         painter = painterResource(id = fotka),
@@ -276,7 +301,7 @@ fun gameReviews(name: String, vrema: String, com: String, fotka: Int){
                             .clip(CircleShape)
                     )
                     Column(modifier = Modifier.padding(horizontal = 20.dp)) {
-                        Box(){
+                        Box() {
                             Text(
                                 text = name,
                                 color = Color.White,
@@ -284,21 +309,23 @@ fun gameReviews(name: String, vrema: String, com: String, fotka: Int){
                                 fontSize = 16.sp
                             )
                         }
-                        Box(modifier = Modifier.padding(top = 10.dp)){
+                        Box(modifier = Modifier.padding(top = 10.dp)) {
                             Text(text = vrema, color = textcolormain)
                         }
 
                     }
                 }
-                Box(modifier = Modifier.padding(top = 24.dp)){
+                Box(modifier = Modifier.padding(top = 24.dp)) {
                     Text(
-                        text = "\""+com+"\"",
+                        text = "\"" + com + "\"",
                         color = textcolormain,
                         modifier = Modifier.padding(vertical = 3.dp)
                     )
 
                 }
-                Box(modifier = Modifier.padding(horizontal = 20.dp, vertical = 20.dp).alpha(0.25f)){
+                Box(
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 20.dp).alpha(0.25f)
+                ) {
                     Divider(color = textcolormain, thickness = 1.dp)
                 }
             }
@@ -307,20 +334,21 @@ fun gameReviews(name: String, vrema: String, com: String, fotka: Int){
 }
 
 
-
-
 @Composable
 fun gameButton(onClick: () -> Unit) {
-    Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Bottom) {
+    Column(
+        modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Bottom
+    ) {
 
-            Button(
-                onClick = { onClick() }, modifier = Modifier.padding(vertical = 24.dp)
-            .width(240.dp).height(50.dp),
-                )
-            {
-                Text("Install")
-            }
+        Button(
+            onClick = { onClick() },
+            modifier = Modifier.padding(vertical = 24.dp)
+                .width(240.dp).height(50.dp),
+        )
+        {
+            Text("Install")
+        }
     }
 
 }
