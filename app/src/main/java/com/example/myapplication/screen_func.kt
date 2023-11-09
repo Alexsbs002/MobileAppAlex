@@ -25,7 +25,6 @@ fun Screen(color: Color) {
     Column(
         modifier = Modifier
             .background(color)
-            .padding(bottom = 100.dp)
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
     ) {
@@ -67,12 +66,12 @@ fun Screen(color: Color) {
                     "Мне это понравилось, так как это было лучшее время, которое я провел со своим сыном с тех пор, как умерла моя жена. Игра в видеоигры напомнила мне, что во всем есть удовольствие, и это снова сблизило меня и моего сына, и теперь мы фактически проводим время вместе вне дома.",
             fotka = R.drawable.ea93a7525f30a3369439e0e41e847fb2
         )
-
+//        отступ снизу для читаемости последнего комментария
+        footer(80)
     }
-//    кнопка фикисруется внизу экрана без скрола
+//    кнопка фикисруется внизу экрана без скрола, отступ, чтобы кнопку не перекрывали цифровые кнопки некоторых телефонов
     Box(
-
-        modifier = Modifier.fillMaxHeight().padding(bottom = 50.dp),
+        modifier = Modifier.fillMaxHeight().padding(bottom = 30.dp),
         contentAlignment = Alignment.BottomCenter
     ) {
         gameButton(onClick = {})
