@@ -35,7 +35,7 @@ import com.example.myapplication.ui.theme.genresColorDarker
 
 
 @Composable
-fun oneStar(fotka: Int){
+fun oneStar(fotka: Int) {
     Image(
         painter = painterResource(id = fotka),
         contentDescription = "dotaScreenshot",
@@ -43,17 +43,22 @@ fun oneStar(fotka: Int){
         modifier = Modifier.background(Color.Transparent).height(15.dp).width(15.dp)
 
 
-
     )
 
 }
+
 @Composable
-fun gameDownloads(rate: Int){
-    Text(color = Color.DarkGray, text = stringResource(rate), fontWeight = FontWeight.SemiBold, fontSize=14.sp,)
+fun gameDownloads(rate: Int) {
+    Text(
+        color = Color.DarkGray,
+        text = stringResource(rate),
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp,
+    )
 }
 
 @Composable
-fun oneGenre(genre : Int){
+fun oneGenre(genre: Int) {
     Row(
         modifier = Modifier.alpha(0.8f)
             .height(25.dp)
@@ -65,7 +70,6 @@ fun oneGenre(genre : Int){
         verticalAlignment = Alignment.CenterVertically,
 
 
-
         ) {
 
         Spacer(modifier = Modifier.width(10.dp))
@@ -75,7 +79,7 @@ fun oneGenre(genre : Int){
 }
 
 @Composable
-fun oneImageDemo(img : Int){
+fun oneImageDemo(img: Int) {
     Image(
         painter = painterResource(id = img),
         contentDescription = "dotaScreenshot",

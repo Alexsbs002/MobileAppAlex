@@ -74,7 +74,6 @@ class MainActivity : ComponentActivity() {
 
         setContent {
 //            main screen function
-//            myColor is background color (backgroundColor = Color(0xFF050B18))
             val myColor: Color = backgroundColor
             Screen(myColor)
         }

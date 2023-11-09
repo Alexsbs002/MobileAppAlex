@@ -46,8 +46,6 @@ import com.example.myapplication.ui.theme.genresColoLight
 import com.example.myapplication.ui.theme.genresColorDarker
 import com.example.myapplication.ui.theme.textcolormain
 
-//all function of project
-
 
 @Composable
 @Preview(showBackground = true)
@@ -78,11 +76,9 @@ fun gameIcon() {
     Box(modifier = Modifier.offset(24.dp, 270.dp)) {
 //        DOTA ICON
         Box(
-            modifier = Modifier.zIndex(2f)
-                .border(
-                    BorderStroke(2.dp, Color.DarkGray), RoundedCornerShape(10.dp)
-                )
-                .height(100.dp).width(100.dp)
+            modifier = Modifier.zIndex(2f).border(
+                BorderStroke(2.dp, Color.DarkGray), RoundedCornerShape(10.dp)
+            ).height(100.dp).width(100.dp)
 
         ) {
             Image(
@@ -95,8 +91,7 @@ fun gameIcon() {
         }
 
         Box(
-            modifier = Modifier.zIndex(2f)
-                .offset(120.dp, 40.dp)
+            modifier = Modifier.zIndex(2f).offset(120.dp, 40.dp)
 
         ) {
             Text(
@@ -108,8 +103,7 @@ fun gameIcon() {
         }
 //STARS
         LazyRow(
-            modifier = Modifier.zIndex(2f)
-                .offset(120.dp, 80.dp),
+            modifier = Modifier.zIndex(2f).offset(120.dp, 80.dp),
             horizontalArrangement = Arrangement.spacedBy(4.dp),
 
             ) {
@@ -131,8 +125,7 @@ fun gameIcon() {
         }
 //        ЧИСЛО ЗАГРУЗОК game_downloads
         Row(
-            modifier = Modifier.zIndex(2f)
-                .offset(220.dp, 80.dp),
+            modifier = Modifier.zIndex(2f).offset(220.dp, 80.dp),
             horizontalArrangement = Arrangement.spacedBy(4.dp),
         ) {
             gameDownloads(R.string.game_downloads)
@@ -190,8 +183,7 @@ fun gameInfo() {
 @Composable
 fun gameDemo() {
     LazyRow(
-        modifier = Modifier,
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
+        modifier = Modifier, horizontalArrangement = Arrangement.spacedBy(4.dp)
 
 
     ) {
@@ -234,8 +226,7 @@ fun gameComments() {
 //            REVIEWS + STARS
             Box() {
                 Box(
-                    modifier = Modifier.zIndex(2f)
-                        .offset(25.dp, 35.dp)
+                    modifier = Modifier.zIndex(2f).offset(25.dp, 35.dp)
                 ) {
                     Text(
                         color = textcolormain,
@@ -247,8 +238,7 @@ fun gameComments() {
 //                STARS
                 Box() {
                     LazyRow(
-                        modifier = Modifier.zIndex(2f)
-                            .offset(25.dp, 15.dp),
+                        modifier = Modifier.zIndex(2f).offset(25.dp, 15.dp),
                         horizontalArrangement = Arrangement.spacedBy(4.dp),
 
                         ) {
@@ -276,14 +266,12 @@ fun gameComments() {
     }
 
 }
+
 //Comments
 @Composable
 fun gameReviews(name: String, vrema: String, com: String, fotka: Int) {
     Card(
-        modifier = Modifier
-            .background(Color.Transparent)
-            .fillMaxWidth()
-            .padding(top = 10.dp)
+        modifier = Modifier.background(Color.Transparent).fillMaxWidth().padding(top = 10.dp)
 
 
     ) {
@@ -296,9 +284,7 @@ fun gameReviews(name: String, vrema: String, com: String, fotka: Int) {
                         painter = painterResource(id = fotka),
                         contentDescription = "null",
                         contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .size(64.dp)
-                            .clip(CircleShape)
+                        modifier = Modifier.size(64.dp).clip(CircleShape)
                     )
                     Column(modifier = Modifier.padding(horizontal = 20.dp)) {
                         Box() {
@@ -337,16 +323,15 @@ fun gameReviews(name: String, vrema: String, com: String, fotka: Int) {
 @Composable
 fun gameButton(onClick: () -> Unit) {
     Column(
-        modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Bottom
     ) {
 
         Button(
             onClick = { onClick() },
-            modifier = Modifier.padding(vertical = 24.dp)
-                .width(240.dp).height(50.dp),
-        )
-        {
+            modifier = Modifier.padding(vertical = 24.dp).width(240.dp).height(50.dp),
+        ) {
             Text("Install")
         }
     }
