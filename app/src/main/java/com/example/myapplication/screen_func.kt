@@ -69,6 +69,7 @@ fun Screen(color: Color) {
         )
 
     }
+//    кнопка фикисруется внизу экрана без скрола
     Box(modifier = Modifier.fillMaxHeight().padding(bottom = 50.dp), contentAlignment = Alignment.BottomCenter) {
         gameButton(onClick = {})
     }
