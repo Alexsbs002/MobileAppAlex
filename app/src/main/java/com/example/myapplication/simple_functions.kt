@@ -89,5 +89,4 @@ fun oneImageDemo(img: Int) {
             .clip(shape = RoundedCornerShape(size = 20.dp))
 
     )
-
 }
