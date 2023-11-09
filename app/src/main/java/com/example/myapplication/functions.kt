@@ -46,7 +46,7 @@ import com.example.myapplication.ui.theme.genresColoLight
 import com.example.myapplication.ui.theme.genresColorDarker
 import com.example.myapplication.ui.theme.textcolormain
 
-
+//основные функции
 @Composable
 @Preview(showBackground = true)
 fun gameHeader() {
