@@ -318,6 +318,10 @@ fun gameReviews(name: String, vrema: String, com: String, fotka: Int) {
         }
     }
 }
+@Composable
+fun footer(pad : Int){
+    Column(modifier = Modifier.fillMaxWidth().height(pad.dp)) {  }
+}
 
 
 @Composable
